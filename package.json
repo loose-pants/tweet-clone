@@ -1,0 +1,29 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "A full-stack Twitter clone with CRUD operations",
+  "main": "server/index.js",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "twitter",
+    "clone",
+    "react",
+    "express",
+    "crud",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "uuid": "^11.1.0"
+  }
+}
