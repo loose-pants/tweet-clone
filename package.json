@@ -4,12 +4,11 @@
   "description": "A full-stack Twitter clone with CRUD operations",
   "main": "server/index.js",
   "scripts": {
-    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && node index.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
+  "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+  "start:frontend": "cd frontend && npm start",
+  "start:backend": "cd backend && npm start",
+  "build": "cd frontend && npm run build"
+},
   "keywords": [
     "twitter",
     "clone",
