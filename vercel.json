@@ -5,22 +5,22 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "client/build"
+        "distDir": "build" // or "dist" (depends on your frontend framework)
       }
     },
     {
-      "src": "index.js",
+      "src": "server/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/"
+      "dest": "server/index.js" // Routes all /api/* requests to your Express backend
     },
     {
       "src": "/(.*)",
-      "dest": "/client/$1"
+      "dest": "client/$1"       // Serves frontend files for all other routes
     }
   ]
 }
